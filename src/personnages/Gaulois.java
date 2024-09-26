@@ -4,18 +4,43 @@ public class Gaulois {
 	private String nom;
 	private int force;
 	private int effetPotion = 1;
-	public int getForce() {
-		return force;
-	}
-	public void setForce(int force) {
+	
+	
+	public Gaulois(String nom, int force) {
+		this.nom = nom;
 		this.force = force;
 	}
-	public int getEffetPotion() {
-		return effetPotion;
-	}
-	public void setEffetPotion(int effetPotion) {
-		this.effetPotion = effetPotion;
+
+
+	public String getNom() {
+		return nom;
 	}
 	
+	public void parler(String texte) {
+		System.out.println(prendreParole() + "« " + texte + "»");
+	}
+
+
+	private String prendreParole() {
+		return "Le Gaulois" + nom + ":";
+	}
+	
+	public void frapper(Romain romain) {
+		System.out.println(nom + " envoie un grand coup dans la mâchoire de "
+		+ romain.getNom());
+		romain.recevoirCoup(force / 3);
+		}
+
+	@Override
+	public String toString() {
+		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
+	}
+	
+	public static void main(String[] args) {
+		Gaulois Asterix;
+		Asterix = new Gaulois("Asterix" , 10);
+		System.out.println(Asterix.getNom());
+	}
+
 
 }
