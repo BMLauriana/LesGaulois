@@ -27,10 +27,12 @@ public class Druide {
 	
 	private void preparerPotion() {
 		Random potion = new Random();
-		potion.nextInt(effetPotionMax);
+		int objet = potion.nextInt(effetPotionMax-effetPotionMin) + effetPotionMin;
+		System.out.println(objet);
 	}
 	
 	public static void main(String[] args) {
 		Druide panoramix = new Druide("Panoramix", 5 , 10 );
+		panoramix.preparerPotion();
 	}
 }
