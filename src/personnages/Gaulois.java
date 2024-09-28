@@ -35,7 +35,7 @@ public class Gaulois {
 	
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
-		parler("Merci Druide, je sens que ma force " + forcePotion
+		parler("Merci Druide, je sens que ma force est " + forcePotion
 				+ " fois multipliee par l'effet de la potion.");
 	}
 
@@ -51,7 +51,6 @@ public class Gaulois {
 		System.out.println(asterix.prendreParole());
 		asterix.parler("Bonjour");
 		asterix.boirePotion(6);
-		System.out.println(asterix);
 	}
 	
 	
