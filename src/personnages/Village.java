@@ -28,7 +28,7 @@ public class Village {
 	}
 	
 	public void afficherVillageois() {
-		System.out.println("Dans le village du chef "+ chef +"vivent les legendaires gaulois :\n");
+		System.out.println("Dans le village du chef "+ chef.getNom() +" vivent les legendaires gaulois :\n");
 		for(int i = 0; i < nbVillageois ; i+=1) {
 			System.out.println("-" + trouverHabitant(i) + "\n");
 		}
@@ -45,10 +45,10 @@ public class Village {
 		Gaulois asterix = new Gaulois("Asterix",8);
 		village1.ajouterHabitant(asterix);
 		Gaulois gaulois = village1.trouverHabitant(1);
-		
+
 //		System.out.println(gaulois);
 //		On obtient les references d'Asterix car ses références ont 
-//		ete sauvegarder dans gaulois avec la methode trouverHabitant
+//		ete sauvegarder dans gaulois avec la methode trouverHabitant + toString dans la classe Gaulois;
 		
 		Gaulois obelix = new Gaulois("Obelix",25);
 		village1.ajouterHabitant(obelix);
