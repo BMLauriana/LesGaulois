@@ -4,7 +4,7 @@ public class Romain {
 
 	private String nom;
 	private int force;
-	private Equipement[] Equipements = new Equipement[2];
+	private Equipement[] equipements = new Equipement[2];
 	private int nbEquipement=0;
 	private String texte;
 	
@@ -68,7 +68,7 @@ public class Romain {
 		if (!(nbEquipement == 0)) { 
 			texte += "\nMais heureusement, grace à mon équipement sa force est diminué de ";
 			for (int i = 0; i < nbEquipement;) { 
-				if ((Equipements[i] != null && Equipements[i].equals(Equipement.BOUCLIER)) == true) { 
+				if ((equipements[i] != null && equipements[i].equals(Equipement.BOUCLIER)) == true) { 
 					resistanceEquipement += 8; 
 				} else { 
 					System.out.println("Equipement casque"); 
@@ -89,13 +89,13 @@ public class Romain {
 					//TODO 
 					int nbEquipementEjecte = 0; 
 					for (int i = 0; i < nbEquipement; i++) {
-						if (Equipements[i] == null) { 
+						if (equipements[i] == null) { 
 							continue;
 						} else { 
 							equipementEjecte[nbEquipementEjecte]             =
-Equipements[i];
+equipements[i];
 							nbEquipementEjecte++; 
-							Equipements[i] = null;
+							equipements[i] = null;
 				}
 		}
 		return equipementEjecte;
@@ -104,7 +104,7 @@ Equipements[i];
 	
 	private void ajouterEquipement(Equipement equipement) {
 		if (nbEquipement<=2) {
-			Equipements[nbEquipement]=equipement;
+			equipements[nbEquipement]=equipement;
 			nbEquipement+=1;
 		}
 	}
@@ -115,7 +115,7 @@ Equipements[i];
 				System.out.println("Le soldat "+ nom + " est deja bien protege !");
 				break;
 			case (1):
-				if (Equipements[0].equals(equipement)) {
+				if (equipements[0].equals(equipement)) {
 				System.out.println("Le soldat "+ nom +" possede deja un "+ equipement+ " !");
 				break;
 				}
