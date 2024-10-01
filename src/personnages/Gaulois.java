@@ -5,8 +5,10 @@ import java.util.Random;
 public class Gaulois {
 	private String nom;
 	private int force;
+	private int nbtrophees; 
 	private int effetPotion = 1;
-	
+	private Equipement[] trophees= new Equipement[100];
+
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -23,21 +25,35 @@ public class Gaulois {
 	}
 
 
-	private String prendreParole() {
-		return "Le Gaulois " + nom + " : ";
-	}
+//	private String prendreParole() {
+//		return "Le Gaulois " + nom + " : ";
+//	}
 	
-	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la machoire de "
-		+ romain.getNom());
-		romain.recevoirCoup(force*effetPotion / 3);
-		}
+//	public void frapper(Romain romain) {
+//		System.out.println(nom + " envoie un grand coup dans la machoire de "
+//		+ romain.getNom());
+//		romain.recevoirCoup(force*effetPotion / 3);
+//		}
 	
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
 		parler("Merci Druide, je sens que ma force est " + forcePotion
 				+ " fois multipliee par l'effet de la potion.");
 	}
+	
+	
+	private String prendreParole() {
+		return "Le gaulois " + nom + " : ";
+	}
+	
+	public void frapper(Romain romain) { 
+			System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+			Equipement[] romainTrophees = romain.recevoirCoup((force / 3) * effetPotion);
+			for (int i = 0; romainTrophees != null && i < romainTrophees.length; i++, nbtrophees++) { 
+				this.trophees[nbtrophees] = romainTrophees[i];
+			} 
+		}
+	
 
 	@Override
 	public String toString() {
