@@ -134,4 +134,7 @@ private Equipement[] ejecterEquipement() {
 		minus.sEquiper(Equipement.BOUCLIER);
 		minus.sEquiper(Equipement.CASQUE);
 	}
+	public int getForce() {
+		return force;
+	}
 }
