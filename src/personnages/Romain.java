@@ -6,6 +6,7 @@ public class Romain {
 	private int force;
 	private Equipement[] equipements = new Equipement[2];
 	private int nbEquipement=0;
+	private boolean vainqueur = true ; 
 	
 	public Romain(String nom, int force) {
 		assert force>=0;
@@ -53,10 +54,11 @@ public class Romain {
 		}else {
 			equipementEjecte = ejecterEquipement();
 			parler("J'abandonne...");
+			vainqueur = false ; 
 		}			 
 		
 		// post condition la force a diminu�e 
-		assert force < oldForce; 
+		assert force <= oldForce; 
 		return equipementEjecte;
 	}
 	
@@ -78,6 +80,9 @@ public class Romain {
 		} 
 		parler(texte); 
 		forceCoup -= resistanceEquipement; 
+		if (forceCoup<0) {
+			forceCoup = 0; 	
+		}
 		return forceCoup; 
 	}
 	

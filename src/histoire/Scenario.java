@@ -30,13 +30,13 @@
 package histoire;
 
 import personnages.Druide;
+import personnages.Musee;
 import personnages.Equipement;
 import personnages.Gaulois;
 import personnages.Romain;
-import villagegaulois.Musee;
+//import villagegaulois.Musee;
 
 public class Scenario {
-
 	public static void main(String[] args) {
 		Druide druide = new Druide("Panoramix", 5, 10);
 		druide.parler("Je vais aller préparer une petite potion...");
